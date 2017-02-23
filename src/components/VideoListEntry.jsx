@@ -1,9 +1,5 @@
 var VideoListEntry = (item) => {
-
-  // var onVideoClick = (event) => {
-  //   console.log(this.state);
-  //   console.log('I got clicked');
-  // };
+  //console.log("this is the item: ", item);
 
   return (
   <div className="video-list-entry">
@@ -11,7 +7,7 @@ var VideoListEntry = (item) => {
       <img className="media-object" src={item.video.snippet.thumbnails.default.url} alt="" />
     </div>
     <div className="media-body">
-      <div className="video-list-entry-title">{item.video.snippet.title}</div>
+      <div className="video-list-entry-title" onClick={() => item.onVideoClick(item.video)}>{item.video.snippet.title}</div>
       <div className="video-list-entry-detail">{item.video.snippet.description}</div>
     </div>
   </div>

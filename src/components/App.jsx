@@ -1,7 +1,7 @@
 class App extends React.Component {
   constructor(props) {
-    console.log(props);
-    console.log('list', window.exampleVideoData);
+    //console.log(props);
+    //console.log('list', window.exampleVideoData);
     super(props);
     // 'state'
     this.state = {
@@ -12,19 +12,18 @@ class App extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick() {
-    console.log(this.state.current);
+  handleClick(video) {
+    //console.log('before', this.state.current);
     this.setState({
-      clicked: true,
       current: video
     });
-    console.log(this.state.current);
+    //console.log('after', this.state.current);
   }
 
 
   render() {
-    console.log('test', this.state.list);
-    console.log('test2', this.state.current);
+    //console.log('test', this.state.list);
+    //console.log('test2', this.state.current);
     return (
       <div>
        <Nav />
@@ -32,7 +31,7 @@ class App extends React.Component {
          <VideoPlayer video={this.state.current} />
        </div>
        <div className="col-md-5">
-         <VideoList videos={this.state.list} onClick={this.handleClick} state={this.state}/>
+         <VideoList videos={this.state.list} onVideoClick={this.handleClick}/>
        </div>
       </div>
     );
