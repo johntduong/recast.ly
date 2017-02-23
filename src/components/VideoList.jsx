@@ -1,15 +1,11 @@
-var VideoList = () => (
+var VideoList = (props) => (
   <div className="video-list media">
-    <VideoListEntry />
-    <VideoListEntry />
-    <VideoListEntry />
-    <VideoListEntry />
-    <VideoListEntry />
-    <VideoListEntry />
-    <VideoListEntry />
-    <VideoListEntry />
-    <VideoListEntry />
+    {props.videos.map(video => <VideoListEntry key={video.toString()} video={video} />)}
   </div>
+);
+
+ReactDOM.render(
+  <VideoList />, document.getElementById('app')
 );
 
 // PropTypes tell other developers what `props` a component expects
