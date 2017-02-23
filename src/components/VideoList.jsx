@@ -1,8 +1,15 @@
-var VideoList = (props) => (
-  <div className="video-list media">
-    {props.videos.map(video => <VideoListEntry key={video.toString()} video={video} />)}
-  </div>
-);
+var VideoList = (props) => {
+  console.log(props);
+
+  var onVideoClick = (event) => {
+    console.log('I got clicked');
+
+  };
+
+  return (<div className="video-list media">
+    {props.videos.map(video => <VideoListEntry onClick={onVideoClick} key={video.toString()} video={video} />)}
+  </div>);
+};
 
 ReactDOM.render(
   <VideoList />, document.getElementById('app')
