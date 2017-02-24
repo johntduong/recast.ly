@@ -1,5 +1,4 @@
 var VideoListEntry = (item) => {
-  //console.log("this is the item: ", item);
 
   return (
   <div className="video-list-entry">

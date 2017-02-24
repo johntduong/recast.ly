@@ -1,5 +1,4 @@
 var VideoList = (props) => {
-  //console.log("this is the props", props);
 
   return (<div className="video-list media">
     {props.videos.map((video, index) => <VideoListEntry onVideoClick={props.onVideoClick} key={video.id.videoId} video={video} />)}
